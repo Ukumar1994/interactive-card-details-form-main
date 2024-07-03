@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task One</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="column column-1"></div>
+        <div class="column column-2">
+            <div id="formContent">
+                <div class="formgroup" id="paymentForm">
+                    <label class="name">Cardholder Name</label>
+                    <input id="cardName" class="nameinput" type="text" placeholder="e.g Jane Appleseed" required>
+                    <div id="nameError" class="error-message"></div>
+
+                    <label class="number">Card Number</label>
+                    <input id="cardNumber" class="numberinput" placeholder="e.g 1234 5678 9123 0000" required maxlength="19">
+                    <div id="numberError" class="error-message"></div>
+
+                    <div class="datecvc">
+                        <label class="number">Exp. Date (MM/YY)</label>
+                        <label class="cvclabel">CVC</label>
+                    </div>
+                    <div class="date">
+                        <input id="expMonth" class="month" placeholder="MM" required>
+                        <input id="expYear" class="year" placeholder="YY" required>
+                        <input id="cvc" class="CVC" placeholder="e.g 123" required>
+                    </div>
+                    <div id="dateError" class="error-message"></div>
+                    <div id="cvcError" class="error-message"></div>
+                    <button type="button" class="confirm-button" onclick="validateForm()">Confirm</button>
+                </div>
+
+                <div id="thankYouMessage" class="thanksbody" style="display:none;">
+                    <img src="Images/icon-complete.svg" alt="iconComplete">
+                    <p class="thanktext">Thank you!</p>
+                    <p class="cardDetails">We've added your card details</p>
+                    <button type="button" class="confirm-button" onclick="validateForm()">Confirm</button>
+                </div>
+            </div>
+        </div>
+        <div class="cardBack">
+            <div class="cvc-display" id="cvcDisplay">123</div>
+        </div>
+        <div class="cardFront">
+            <img src="Images/cardlogo.svg" alt="cardLogo">
+            <div class="card-number" id="displayCardNumber">0000 0000 0000 0000</div>
+            <div class="card-details">
+                <div class="card-holder" id="displayCardName">Jane Appleseed</div>
+                <div class="expiry-date" id="displayExpDate">00/00</div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
